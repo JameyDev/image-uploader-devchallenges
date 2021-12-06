@@ -14,19 +14,26 @@
 </head>
 
 <body>
-  <header>
+  <header class="text-center">
     <h1>DevChallenges Image Uploader</h1>
   </header>
 
   <main>
-    <section class="img-drop-area">
-      <i class="fas fa-image"></i>
-      <p>Drag n' Drop your Image (.jpg or .png)</p>
-      <p><small>...or click here to upload!</small></p>
-    </section>
+    <div class="card">
+      <div id="img-drop-header" class="text-center">
+        <h1>Upload your image</h1>
+        <small>File should be .jpg or .png</small>
+      </div>
+      <div class="img-drop-area">
+        <img src="assets/img/image.svg" alt="image example">
+        <p>Drag & Drop your image here</p>
+      </div>
+      <p class="text-center">Or</p>
+      <button class="btn btn-primary" type="submit">Choose a File</button>
+    </div>
   </main>
 
-  <footer>
+  <footer class="text-center">
     Solution by Jamey Bryce - Challenge from <a href="http://devchallenges.io" target="_blank" rel="noopener noreferrer">devchallenges.io</a>
   </footer>
 
