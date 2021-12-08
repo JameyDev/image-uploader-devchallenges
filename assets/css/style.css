@@ -52,6 +52,10 @@ header {
   border-color: green;
 }
 
+.green-bg {
+  background-color: rgba(16, 136, 16, 0.322);
+}
+
 #upload-btn {
     padding: 0.5rem;
     margin: 1rem 8rem;
