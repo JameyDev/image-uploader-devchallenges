@@ -21,6 +21,18 @@ const initApp = function () {
     dragNDrop.forEach(eventName => {
         imgDropArea.addEventListener(eventName, inActive);
     });
+
+    imgDropArea.addEventListener('drop', handleDrop);
 }
 
 document.addEventListener("DOMContentLoaded", initApp);
+
+const handleDrop = function(e) {
+    const data = e.dataTransfer;
+    const files = data.files;
+    const fileArr = [...files];
+    fileArr.forEach(file => {
+        console.log(file.name);
+        // add image to DOM
+    });
+}
