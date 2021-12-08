@@ -41,11 +41,17 @@ const handleDrop = function(e) {
             reader.onload = function () {
                 let uploadArea = document.querySelector('.image-container');
                 let url = reader.result;
-                let image = `<img src="${url}" alt="uploaded image">
-                             <p class="text-center">${file.name}</p>`;
+
+                // build image HTML
+                let imageTxt = `<p class="img-txt text-center">${file.name}</p>`;
+                let image = `<div class="image"><img src="${url}" alt="uploaded image">${imageTxt}</div>`;
                 
+                // define default image HTML
                 const defaultImageUrl = 'assets/img/image.svg';
-                const defaultImageHtml = `<img src="${defaultImageUrl}" alt="image example">`;
+                const defaultImageAlt = 'image example';
+                const defaultImageHtml = `<img src="${defaultImageUrl}" alt="${defaultImageAlt}">`
+
+                // remove the default image if it is present after upload
                 if (uploadArea.innerHTML.includes(defaultImageHtml)) {
                     uploadArea.innerHTML = image;
                 } else {
