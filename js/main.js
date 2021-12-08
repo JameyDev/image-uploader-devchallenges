@@ -1,9 +1,9 @@
 const initApp = function () {
     const imgDropArea = document.querySelector('.img-drop-area');
 
-    const active = () => imgDropArea.classList.add('green-border');
+    const active = () => imgDropArea.classList.add('green-border', 'green-bg');
 
-    const inActive = () => imgDropArea.classList.remove('green-border');
+    const inActive = () => imgDropArea.classList.remove('green-border', 'green-bg');
 
     const preventDef = (ev) => ev.preventDefault();
 
