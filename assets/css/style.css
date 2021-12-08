@@ -30,7 +30,7 @@ header {
 
 footer {
   position: absolute;
-  top: 90%;
+  top: 93%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 1rem;
@@ -54,6 +54,8 @@ footer {
 
 .img-drop-area img {
   padding: 2.5rem;
+  height: 15rem;
+  width: 15rem;
 }
 
 .green-border {

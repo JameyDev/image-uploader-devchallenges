@@ -32,7 +32,25 @@ const handleDrop = function(e) {
     const files = data.files;
     const fileArr = [...files];
     fileArr.forEach(file => {
-        console.log(file.name);
-        // add image to DOM
+        console.log(file);
+        
+        // add image to site
+        const validExtensions = ['image/jpeg', 'image/jpg', 'image/png'];
+        if (validExtensions.includes(file.type)) {
+            let reader = new FileReader();
+            reader.onload = function () {
+                let uploadArea = document.querySelector('.img-drop-area');
+                let url = reader.result;
+                let imageTag = `<img src="${url}" alt="uploaded image">
+                                <p class="text-center">${file.name}</p>`;
+                uploadArea.innerHTML = imageTag;
+            }
+            reader.readAsDataURL(file);
+        } else {
+            // tell user error
+            alert('That is not an image file...');
+        }
+
+        //const imgArea = document.querySelector('.img-drop-area');
     });
 }
