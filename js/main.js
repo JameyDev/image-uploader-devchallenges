@@ -39,11 +39,18 @@ const handleDrop = function(e) {
         if (validExtensions.includes(file.type)) {
             let reader = new FileReader();
             reader.onload = function () {
-                let uploadArea = document.querySelector('.img-drop-area');
+                let uploadArea = document.querySelector('.image-container');
                 let url = reader.result;
                 let image = `<img src="${url}" alt="uploaded image">
-                                <p class="text-center">${file.name}</p>`;
-                uploadArea.insertAdjacentHTML('beforeend', image);
+                             <p class="text-center">${file.name}</p>`;
+                
+                const defaultImageUrl = 'assets/img/image.svg';
+                const defaultImageHtml = `<img src="${defaultImageUrl}" alt="image example">`;
+                if (uploadArea.innerHTML.includes(defaultImageHtml)) {
+                    uploadArea.innerHTML = image;
+                } else {
+                    uploadArea.insertAdjacentHTML('beforeend', image);
+                }
             }
             reader.readAsDataURL(file);
         } else {
