@@ -41,9 +41,9 @@ const handleDrop = function(e) {
             reader.onload = function () {
                 let uploadArea = document.querySelector('.img-drop-area');
                 let url = reader.result;
-                let imageTag = `<img src="${url}" alt="uploaded image">
+                let image = `<img src="${url}" alt="uploaded image">
                                 <p class="text-center">${file.name}</p>`;
-                uploadArea.innerHTML = imageTag;
+                uploadArea.insertAdjacentHTML('beforeend', image);
             }
             reader.readAsDataURL(file);
         } else {
