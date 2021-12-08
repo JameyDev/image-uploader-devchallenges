@@ -5,7 +5,7 @@ const initApp = function () {
 
     const inActive = () => imgDropArea.classList.remove('green-border', 'green-bg');
 
-    const preventDef = (ev) => ev.preventDefault();
+    const preventDef = (e) => e.preventDefault();
 
     const events = ['dragenter', 'dragover', 'dragleave', 'drop'];
     events.forEach(eventName => {
