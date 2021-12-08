@@ -58,6 +58,11 @@ footer {
   width: 15rem;
 }
 
+.image-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .green-border {
   border-color: green;
 }
